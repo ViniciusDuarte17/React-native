@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { StatusBar, SafeAreaView, View } from 'react-native';
 import Cesta from './src/Telas/Cesta';
 import { useFonts, 
@@ -6,7 +6,25 @@ import { useFonts,
   Montserrat_700Bold 
 } from '@expo-google-fonts/montserrat';
 
+import * as SplashScreen from 'expo-splash-screen';
+
+import cesta from './src/Telas/mocks/cesta';
+
+
 export default function App() {
+  useEffect(() => {
+    async function prepare() {
+      try {
+        await SplashScreen.preventAutoHideAsync();
+      } catch (e) {
+        console.warn(e);
+      }
+    }
+
+    prepare();
+  }, []);
+
+  SplashScreen.hideAsync();
  
   const [fontCarregada] = useFonts({
      'Montserrat': Montserrat_400Regular,
@@ -14,13 +32,13 @@ export default function App() {
   });
 
   if (!fontCarregada) {
-    return <View />;
+    return null;
   }
 
   return (
     <SafeAreaView >
       <StatusBar />
-      <Cesta />
+      <Cesta {...cesta}/>
     </SafeAreaView>
   );
 }

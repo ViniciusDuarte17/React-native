@@ -1,12 +1,18 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Image, View } from "react-native";
 import Texto from "../../components/Texto";
+
+import logo from "../../../../assets/logo.png";
 
 
 const Detalhes = () => {
   return (
     <>
       <Texto style={estilos.nome}>Cesta de verduras</Texto>
+      <View style={estilos.fazenda}>
+        <Image source={logo} style={estilos.imagemFazenda} />
+        <Texto style={estilos.nomeDaFazenda}>Jonny jack Farm</Texto>
+      </View>
       <Texto style={estilos.descricao}>
         Uma cesta com produtos selecionados cuidadosamente da fazenda direto
         para sua cozinha

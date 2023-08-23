@@ -8,9 +8,10 @@ const cesta = {
     detalhes: {
         nome: 'Cesta de verduras',
         logoFazenda: logo,
-        nomeFazenda: 'Jonny jack Farm',
+        nomeFazenda: 'Jonny jack Farmmmm',
         descricao: ' Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha',
-        preco: 'R$ 40,00'
+        preco: 'R$ 40,00',
+        botao: "Comprar"
     }
 }
 

@@ -36,7 +36,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView >
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar />
       <Cesta {...cesta}/>
     </SafeAreaView>
